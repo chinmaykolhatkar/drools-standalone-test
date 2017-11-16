@@ -2,4 +2,4 @@
 
 while read p; do
     ./run $p
-done < config.txt
+done < config

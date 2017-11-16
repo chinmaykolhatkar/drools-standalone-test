@@ -61,6 +61,13 @@ public class LatencyTests
     KieSession kieSession = null;
 
     for (int i = 0; i < numTransactions; i++) {
+      if(i%1000==0){
+        try {
+          Thread.sleep(100);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+      }
       Transaction t = gen.generateTransaction(null);
       int sid = t.getCustomer().hashCode() % numSessions;
 
@@ -89,7 +96,6 @@ public class LatencyTests
       e.printStackTrace();
     }
 
-    System.exit(0);
 //    kieSession.dispose();
 //    kieSession.destroy();
 
