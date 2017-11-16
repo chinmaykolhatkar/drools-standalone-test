@@ -1,0 +1,4 @@
+#!/bin/bash
+java -cp $JCP -Dn=$1 -Ds=$2 LatencyTests &
+echo $!
+
